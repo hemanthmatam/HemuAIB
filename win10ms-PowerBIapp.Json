@@ -67,7 +67,7 @@
                                  "$uri='https://newfslogix001.blob.core.windows.net/repos/PBIDesktopSetup_x64.exe?sp=r&st=2021-12-15T17:41:25Z&se=2021-12-16T01:41:25Z&spr=https&sv=2020-08-04&sr=b&sig=kodyO%2FU5H4VlXgIKEDzjOrkUB%2B7iuqMw9X80e3LmSFg%3D'"
                                   "Invoke-WebRequest -Uri '$uri' -UseBasicParsing -OutFile 'c:\\Repos\\PBIDesktopSetup_x64.exe'"
                                   "cd 'C:\\Repos'"
-                                  ".\PBIDesktopSetup_x64.exe -s ACCEPT_EULA=1"
+                                  ".\\PBIDesktopSetup_x64.exe -s ACCEPT_EULA=1"
                                  ]
                       
                     },
