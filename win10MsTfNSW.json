@@ -48,7 +48,7 @@
             "source": {
                 "type": "PlatformImage",
                     "publisher": "MicrosoftWindowsDesktop",
-                    "offer": "windows-10",
+                    "offer": "office-365",
                     "sku": "win10-21h2-avd-m365-g2",
                     "version": "latest"
             },
@@ -62,11 +62,40 @@
                     },
                     {
                         "type": "PowerShell",
-                        "name": "CreateBuildPath",
+                        "name": "InstallPowerBIDesktop",
                         "inline":[ 
-                                 "Invoke-WebRequest -Uri "xxxxxxxxxxxx" -OutFile 'c:\\Repos'"
-                                 "cd 'C:\\Repos'"
-                                 ".\PBIDesktopSetup_x64.exe -s -passive ACCEPT_EULA=1"
+                                 "$uri1='https://avdappsrepository.blob.core.windows.net/appbinaries/PBIDesktopSetup_x64.exe?sp=r&st=2021-12-24T05:07:47Z&se=2021-12-24T16:07:47Z&spr=https&sv=2020-08-04&sr=b&sig=PfPspQ3BFyhHl7lDsFeqpI9HCPtCBu%2FjzUkyOg1n5ak%3D'",
+                                  "Invoke-WebRequest -Uri '$uri1' -UseBasicParsing -OutFile 'c:\\Repos\\PBIDesktopSetup_x64.exe'",
+                                  "Start-Sleep -Seconds 10",
+                                  "cd 'C:\\Repos'",
+                                  ".\\PBIDesktopSetup_x64.exe -s ACCEPT_EULA=1",
+                                  "Start-Sleep -Seconds 10"
+                                 ]
+                      
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "InstallVisio",
+                        "inline":[ 
+                                 "$uri2='https://avdappsrepository.blob.core.windows.net/appbinaries/Visio%20OfficeSetup.exe?sp=r&st=2021-12-24T05:53:37Z&se=2021-12-24T15:53:37Z&spr=https&sv=2020-08-04&sr=b&sig=ZQvTnfhmUFlk8wJ7RgPOvUDEjoC17PZo1dOv6ZAXN3I%3D'",
+                                 "Invoke-WebRequest -Uri '$uri2' -OutFile 'c:\\Repos\\VisioSetup.exe'",
+                                 "cd 'C:\\Repos'",
+                                 "Start-Sleep -Seconds 10",
+                                 ".\\VisioSetup.exe",
+                                 "Start-Sleep -Seconds 30"
+                                 ]
+                      
+                    },
+                    {
+                        "type": "PowerShell",
+                        "name": "installProject",
+                        "inline":[ 
+                                "$uri3='https://avdappsrepository.blob.core.windows.net/appbinaries/Project%20OfficeSetup.exe?sp=r&st=2021-12-24T05:59:49Z&se=2021-12-24T13:59:49Z&spr=https&sv=2020-08-04&sr=b&sig=Q29z0hnJi0C82WbsJW6qcMnR7HCQ8IMqquh0uyywT%2Bc%3D'",
+                                 "Invoke-WebRequest -Uri '$uri3' -OutFile 'c:\\Repos\\ProjectSetup.exe'",
+                                 "cd 'C:\\Repos'",
+                                 "Start-Sleep -Seconds 10",
+                                 ".\\ProjectSetup.exe",
+                                 "Start-Sleep -Seconds 30"
                                  ]
                       
                     },
@@ -74,47 +103,16 @@
                         "type": "PowerShell",
                         "name": "CreateBuildPath",
                         "inline":[ 
-                                 "Invoke-WebRequest -Uri "xxxxxxxxxxxx" -OutFile 'c:\\Repos'"
+                                 "$uri4= 'https://avdappsrepository.blob.core.windows.net/appbinaries/CitrixWorkspaceApp19.12.6000.exe?sp=r&st=2021-12-24T06:06:45Z&se=2021-12-24T14:06:45Z&spr=https&sv=2020-08-04&sr=b&sig=0fkSrQ62AQrz3%2F7mOhL71xrB9RGDVfitKnbZmOjhCjQ%3D'",
+                                 "Invoke-WebRequest -Uri '$uri4' -OutFile 'c:\\Repos\\CitrixWorkspaceApp.exe'"
                                  "cd 'C:\\Repos'"
-                                 ".\Project_OfficeSetup.exe"
+                                 ".\\CitrixWorkspaceApp.exe /AutoUpdateCheck=disabled /silent"
                                  ]
                       
                     },
-                    {
-                        "type": "PowerShell",
-                        "name": "CreateBuildPath",
-                        "inline":[ 
-                                 "Invoke-WebRequest -Uri "xxxxxxxxxxxx" -OutFile 'c:\\Repos'"
-                                 "cd 'C:\\Repos'"
-                                 ".\Visio_OfficeSetup.exe"
-                                 ]
-                      
-                    },
-                    {
-                        "type": "PowerShell",
-                        "name": "CreateBuildPath",
-                        "inline":[ 
-                                 "Invoke-WebRequest -Uri "xxxxxxxxxxxx" -OutFile 'c:\\Repos'"
-                                 "cd 'C:\\Repos'"
-                                 ".\CitrixWorkspaceApp.exe /AutoUpdateCheck=disabled /silent"
-                                 ]
-                      
-                    },
-
-                    {
-                        "type": "PowerShell",
-                        "name": "CreateBuildPath",
-                        "inline":[ 
-                                 "Invoke-WebRequest -Uri "xxxxxxxxxxxx" -OutFile 'c:\\Repos'"
-                                 "cd C:\\Repos\\Qualys_CloudSecurityAgent_4.4.0.38_R1\\Package\\x64"
-                                 ".\Qualys_CloudSecurityAgent_x64_4.4.0.38_ALL_R1_Install.vbs"
-                                 ]
-      
-                    },
-                    
                     {
                         "type": "WindowsRestart",
-                        "restartCheckCommand": "write-host 'restarting post apps Install'",
+                        "restartCheckCommand": "write-host 'restarting post Citrix receiver Install'",
                         "restartTimeout": "5m"
                     },
                         
@@ -136,7 +134,7 @@
                     "galleryImageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
-                        "source": "wvd10",
+                        "source": "Avd10",
                         "baseosimg": "windows10"
                     },
                     "replicationRegions": [
