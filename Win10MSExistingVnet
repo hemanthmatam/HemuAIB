@@ -98,14 +98,18 @@
         ],
         "distribute": 
             [
-                {   "type":"ManagedImage",
-                    "imageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/images/<imageName>",
-                    "location": "<region>",
+                {   
+                    "type": "SharedImage",
+                    "galleryImageId": "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.Compute/galleries/<sharedImageGalName>/images/<imageDefName>",
                     "runOutputName": "<runOutputName>",
                     "artifactTags": {
-                        "source": "azVmImageBuilder",
+                        "source": "Avd10",
                         "baseosimg": "windows10"
-                    }
+                    },
+                    "replicationRegions": [
+                      "<region1>"
+
+                    ]
                 }
             ]
         }
