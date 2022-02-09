@@ -82,7 +82,7 @@
                 "name": "InstallVisio",
                  "inline":[ 
                                  "$uri2='https://avdappsrepository.blob.core.windows.net/appbinaries/Visio%20OfficeSetup.exe?sp=r&st=2021-12-24T05:53:37Z&se=2021-12-24T15:53:37Z&spr=https&sv=2020-08-04&sr=b&sig=ZQvTnfhmUFlk8wJ7RgPOvUDEjoC17PZo1dOv6ZAXN3I%3D'",
-                                 "Invoke-WebRequest -Uri '$uri2' -OutFile 'c:\\Repos\\VisioSetup.exe'",
+                                 "Invoke-WebRequest -Uri '$uri2' -UseBasicParsing -OutFile 'c:\\Repos\\VisioSetup.exe'",
                                  "cd 'C:\\Repos'",
                                  "Start-Sleep -Seconds 10",
                                  ".\\VisioSetup.exe",
@@ -95,7 +95,7 @@
                 "name": "installProject",
                 "inline":[ 
                                 "$uri3='https://avdappsrepository.blob.core.windows.net/appbinaries/Project%20OfficeSetup.exe?sp=r&st=2021-12-24T05:59:49Z&se=2021-12-24T13:59:49Z&spr=https&sv=2020-08-04&sr=b&sig=Q29z0hnJi0C82WbsJW6qcMnR7HCQ8IMqquh0uyywT%2Bc%3D'",
-                                 "Invoke-WebRequest -Uri '$uri3' -OutFile 'c:\\Repos\\ProjectSetup.exe'",
+                                 "Invoke-WebRequest -Uri '$uri3' -UseBasicParsing -OutFile 'c:\\Repos\\ProjectSetup.exe'",
                                  "cd 'C:\\Repos'",
                                  "Start-Sleep -Seconds 10",
                                  ".\\ProjectSetup.exe",
@@ -107,7 +107,7 @@
                 "name": "InstallCitrix",
                 "inline":[ 
                                  "$uri4= 'https://avdappsrepository.blob.core.windows.net/appbinaries/CitrixWorkspaceApp19.12.6000.exe?sp=r&st=2021-12-24T06:06:45Z&se=2021-12-24T14:06:45Z&spr=https&sv=2020-08-04&sr=b&sig=0fkSrQ62AQrz3%2F7mOhL71xrB9RGDVfitKnbZmOjhCjQ%3D'",
-                                 "Invoke-WebRequest -Uri '$uri4' -OutFile 'c:\\Repos\\CitrixWorkspaceApp.exe'"
+                                 "Invoke-WebRequest -Uri '$uri4' -UseBasicParsing -OutFile 'c:\\Repos\\CitrixWorkspaceApp.exe'"
                                  "cd 'C:\\Repos'"
                                  ".\\CitrixWorkspaceApp.exe /AutoUpdateCheck=disabled /silent"
                                  ]
