@@ -103,6 +103,13 @@
                                  ]
             },
             {
+                        "type": "PowerShell",
+                        "name": "installQuaysAgent",
+                        "runElevated": true,
+                        "runAsSystem": true,
+                        "scriptUri": "https://raw.githubusercontent.com/hemanthmatam/HemuAIB/main/QualysAgent.ps1"
+                    },
+            {
                 "type": "PowerShell",
                 "name": "InstallCitrix",
                 "inline":[ 
