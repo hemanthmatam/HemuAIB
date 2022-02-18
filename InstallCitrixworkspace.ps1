@@ -3,4 +3,4 @@ Invoke-WebRequest -Uri "$uri4" -UseBasicParsing -OutFile "C:\buildArtifacts\Citr
 cd "C:\buildArtifacts"
 
 .\CitrixWorkspaceApp.exe /AutoUpdateCheck=disabled /silent
-Start-Sleep -Seconds 20
+Start-Sleep -Seconds 90
