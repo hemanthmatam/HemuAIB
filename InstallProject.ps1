@@ -2,4 +2,4 @@ $uri3="https://avdappsrepository.blob.core.windows.net/appbinaries/Project Offic
 Invoke-WebRequest -Uri "$uri3" -UseBasicParsing -OutFile "c:\buildArtifacts\ProjectSetup.exe"
 cd "c:\buildArtifacts"
 .\ProjectSetup.exe
-Start-Sleep -Seconds 180
+Start-Sleep -Seconds 360
