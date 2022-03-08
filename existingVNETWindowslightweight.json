@@ -51,7 +51,7 @@
             "type": "PlatformImage",
                 "publisher": "MicrosoftWindowsDesktop",
                 "offer": "windows-10",
-                "sku": "win10-21h2-avd-g1",
+                "sku": "win10-21h2-avd",
                 "version": "latest"
             
         },
