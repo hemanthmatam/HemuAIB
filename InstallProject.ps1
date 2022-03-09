@@ -3,3 +3,4 @@ Invoke-WebRequest -Uri "$uri3" -UseBasicParsing -OutFile "c:\buildArtifacts\Proj
 cd "c:\buildArtifacts"
 .\ProjectSetup.exe
 Start-Sleep -Seconds 360
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Project
