@@ -4,3 +4,4 @@ Expand-Archive -LiteralPath C:\buildArtifacts\Objective10-6.zip -DestinationPath
 cd C:\buildArtifacts\Objective_Objective_x64_10.6.306\Package\x64
 .\Objective_Objective_x64_10.6.306_ALL_R3_Install.vbs
 sleep 120
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Objective-10-6-version
