@@ -3,3 +3,4 @@ Invoke-WebRequest -Uri "$uri5" -UseBasicParsing -OutFile "c:\buildArtifacts\moms
 cd "C:\buildArtifacts"
 .\momsmartclient.msi /quiet
 Start-Sleep -Seconds 120
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Canon-Smartprint-Uniflow-20222
