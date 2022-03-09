@@ -3,3 +3,4 @@ Invoke-WebRequest -Uri "$uri2" -UseBasicParsing -OutFile "c:\buildArtifacts\Visi
 cd "C:\buildArtifacts"
 .\VisioSetup.exe
 Start-Sleep -Seconds 360
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Visio
