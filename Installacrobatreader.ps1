@@ -3,3 +3,4 @@ Invoke-WebRequest -Uri "$uri1" -UseBasicParsing -OutFile "c:\buildArtifacts\Acro
 cd C:\buildArtifacts
 .\Acrordr.exe /q /s /sAll /rs /msi EULA_ACCEPT=YES AgreeToLicense=Yes RebootYesNo=No
 sleep 120
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Adobe-reader
