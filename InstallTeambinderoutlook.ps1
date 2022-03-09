@@ -4,3 +4,4 @@ Expand-Archive -LiteralPath C:\buildArtifacts\Teambinderoutlook.zip -Destination
 cd C:\buildArtifacts\InEight_TeamBinderOutlookIntegration_x64_1.15.7424\Package\x64
 .\QASoftware_TeamBinderOutlookIntegration_x64_1.15.7424_ALL_R1.cmd install
 sleep 180
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-Teams-Binder-Outlook
