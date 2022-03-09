@@ -4,3 +4,4 @@ Expand-Archive -LiteralPath C:\buildArtifacts\SAPuserclient.zip -DestinationPath
 cd C:\buildArtifacts\SAP_ERPBusinessUserClientSuite_2.2\Package\x86
 .\SAP_ERPSupportUserClientSuite_2.2_ALL_R1_Install.vbs
 sleep 360
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-SAB-Business-Clinet-2-2-version
