@@ -6,4 +6,4 @@ cd C:\buildArtifacts\Bentley_ProjectWiseExplorer_x64_10.00.3434\Package\x64\
 .\Bentley_ProjectWiseExplorer_x64_10.00.3434_ALL_R1_Install.vbs
 Sleep 150
 
-Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-bently-projectexpl
+Add-Content -Path C:\buildArtifactslogs\azureImageBuilder.txt -Value `nAIB-Installed-bently-projectexplprerequsite
